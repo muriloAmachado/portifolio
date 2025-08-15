@@ -22,4 +22,4 @@ O projeto foi construído com as seguintes tecnologias:
 
 # Protótipos
 
-Para visualizar os protótipos do projeto [clique aqui](https://www.google.com/) 🚀
+Para visualizar o protótipo do projeto [clique aqui](./images/Protótipo.png) 🚀
