@@ -4,3 +4,5 @@ export const SOBRE_MIM: string = `ihdfoasdnvjfsnavknfsdvnsfiavkfnsavknadfvnafjnb
                     bjdanbjndgakbnvkdfabodgaknbkngdakbndagokbnkaogdnbbonadgibondgabnodaknb
                     bjaodnbodagnbkindgaoda
                     adgjobndaognbokdagnbkdagnbkndagobndoganbkfdasnvojgjfasngjofnadbuadf`
+
+export const LINGUAGENS = ["en-US", "pt-BR"]

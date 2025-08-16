@@ -1,7 +1,7 @@
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import Inicio from "./_components/Inicio";
-import {MenuNavegacao} from "./_components/MenuNavegacao";
+import Inicio from "../_components/Inicio";
+import {MenuNavegacao} from "../_components/MenuNavegacao";
 
 export default function Home() {
   return (
