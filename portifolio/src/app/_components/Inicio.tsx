@@ -1,6 +1,6 @@
 import { AUTOR, SOBRE_MIM } from '@/lib/constants';
 import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 export default function Inicio() {
     const t = useTranslations('SobreMim');

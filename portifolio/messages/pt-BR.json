@@ -2,5 +2,11 @@
   "SobreMim": {
     "autor": "Ítalo Vitorino",
     "descricao": "Estudante de Engenharia de Software"
+  },
+
+  "Secoes": {
+    "experiencias": "Experiências",
+    "projetos": "Projetos",
+    "contatos": "Contatos"
   }
 }

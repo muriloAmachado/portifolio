@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu } from "lucide-react"
+import { useTranslations } from 'next-intl';
 
 import {
   NavigationMenu,
@@ -17,6 +18,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AUTOR } from "@/lib/constants"
 import { DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+import AlternadorIdioma from "./AlternadorIdioma"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -57,6 +59,8 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean }) {
+  const t = useTranslations('Secoes');
+  
   return (
     <NavigationMenu
       viewport={false}
@@ -64,7 +68,7 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
       className={`w-full ${vertical ? "items-start justify-start" : "justify-end"}`}
     >
       <NavigationMenuList className={`${vertical ? "flex-col gap-4 items-start justify-start" : ""}`}>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger className="items-start">Components</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -79,25 +83,20 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Sobre Mim</Link>
+            <Link href="/docs">{t("experiencias")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Experiências</Link>
+            <Link href="/docs">{t("projetos")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Projetos</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Contato</Link>
+            <Link href="/docs">{t("contatos")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
@@ -130,7 +129,10 @@ export function MenuNavegacao() {
 
   return (
     <header className="w-full p-4 flex justify-between items-center bg-background">
-      <div className="text-xl font-bold">{AUTOR}</div>
+      <div className="text-xl font-bold flex gap-5 items-center">
+        {AUTOR}
+        <AlternadorIdioma />
+      </div>
 
       {/* Menu Desktop */}
       <div className="hidden md:flex">
