@@ -17,46 +17,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AUTOR } from "@/lib/contants"
 import { DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+import { useScrollSpy } from "@/hooks/use-scroll-spy"
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
+const sessoes: { id: string; label: string; }[] = [
+  { id: "sobre-mim", label: "Sobre Mim" },
+  { id: "experiencias", label: "Experiências" },
+  { id: "projetos", label: "Projetos" },
+  { id: "contato", label: "Contato" },
 ]
 
 export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean }) {
+  
+  const activeId = useScrollSpy();
+
   return (
     <NavigationMenu
       viewport={false}
@@ -64,42 +37,20 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
       className={`w-full ${vertical ? "items-start justify-start" : "justify-end"}`}
     >
       <NavigationMenuList className={`${vertical ? "flex-col gap-4 items-start justify-start" : ""}`}>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="items-start">Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+        {sessoes.map(({id, label}) => (
+          <NavigationMenuItem key={id}>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link
+                  href={`#${id}`}
+                  className={`${navigationMenuTriggerStyle()} ${
+                    activeId === id ? "text-primary font-bold" : ""
+                  }`}
                 >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Sobre Mim</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Experiências</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Projetos</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Contato</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+                  {label}
+                </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   )
@@ -129,7 +80,7 @@ export function MenuNavegacao() {
   const [open, setOpen] = React.useState(false)
 
   return (
-    <header className="w-full p-4 flex justify-between items-center bg-background">
+    <header className="fixed top-0 left-0 w-full z-50 p-4 flex justify-between items-center bg-background shadow-md mb-20">
       <div className="text-xl font-bold">{AUTOR}</div>
 
       {/* Menu Desktop */}
