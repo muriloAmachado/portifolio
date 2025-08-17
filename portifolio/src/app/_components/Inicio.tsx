@@ -1,27 +1,49 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { bebasNeue } from '../[locale]/fonts';
+import { Button } from '@/components/ui/button';
+import { Download } from 'lucide-react';
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { BotaoRedeSocial } from './BotaoRedeSocial';
+import { GITHUB_URL, LINKEDIN_URL } from '@/lib/constants';
 
 export default function Inicio() {
     const t = useTranslations('SobreMim');
     return (
-        <div className="flex flex-col md:flex-row w-full items-center justify-between px-6 md:px-24 py-10 gap-8">
+        <div className="flex flex-col md:flex-row w-full items-center justify-between px-10 md:px-24 py-10 gap-10">
             
             {/* Imagem primeiro no mobile */}
             <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2">
                 <Image 
                     src="/Eu.jpg"
                     alt="Minha foto de perfil"
-                    width={600}
-                    height={700}
+                    width={562}
+                    height={562}
                     className="rounded-3xl"
                 />
             </div>
 
             {/* Texto depois no mobile */}
-            <div className="text-wrap w-full md:w-1/2 text-center md:text-left order-2 md:order-1">
-                <h1 className={`text-4xl md:text-6xl mb-6 ${bebasNeue.className}`}>{t("apresentacao")}</h1>
-                <p className="break-words max-w-full text-[var(--cinza-claro)]">{t("descricao")}</p>
+            <div className="flex flex-col gap-10 text-wrap w-full md:w-1/2 text-center md:text-left order-2 md:order-1">
+                <div>
+                    <h1 className={`text-4xl md:text-6xl mb-6 ${bebasNeue.className}`}>{t("apresentacao")}</h1>
+                    <p className="break-words max-w-full text-[var(--cinza-claro)]">{t("descricao")}</p>
+                </div>
+                
+                <div className="flex gap-3 items-center">
+                    <Button className="bg-[var(--primaria)] text-black rounded-full flex items-center gap-2 hover:bg-[var(--primaria-hover)] w-44 cursor-pointer">
+                        DOWNLOAD CV
+                        <Download />
+                    </Button>
+
+                    <BotaoRedeSocial link={LINKEDIN_URL} rotulo="Linkedin">
+                        <FaLinkedinIn size={20}/>
+                    </BotaoRedeSocial>
+
+                    <BotaoRedeSocial link={GITHUB_URL} rotulo="GitHub">
+                        <FaGithub size={20}/>
+                    </BotaoRedeSocial>
+                </div>
             </div>
         </div>
     );

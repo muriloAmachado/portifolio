@@ -112,7 +112,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --primaria: #D3E97A;
+  --primaria-hover: #C2D85F;
   --cinza-claro: #c7c7c7;
+  --cinza-escuro: #222222;
+  --cinza-escuro-hover: #333333;
 }
 
 .dark {
