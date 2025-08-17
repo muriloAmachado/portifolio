@@ -39,7 +39,7 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
       <NavigationMenuList className={`${vertical ? "flex-col gap-4 items-start justify-start" : ""}`}>
         {sessoes.map(({id, label}) => (
           <NavigationMenuItem key={id}>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink asChild>
                 <Link
                   href={`#${id}`}
                   className={`${navigationMenuTriggerStyle()} ${
