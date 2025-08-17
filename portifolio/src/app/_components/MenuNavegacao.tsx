@@ -19,6 +19,7 @@ import { AUTOR } from "@/lib/constants"
 import { DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 import AlternadorIdioma from "./AlternadorIdioma"
+import { bebasNeue } from "../[locale]/fonts";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -86,17 +87,17 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
         </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">{t("experiencias")}</Link>
+            <Link href="/docs" className="text-[var(--cinza-claro)]">{t("experiencias")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">{t("projetos")}</Link>
+            <Link href="/docs" className="text-[var(--cinza-claro)]">{t("projetos")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">{t("contatos")}</Link>
+            <Link href="/docs" className="text-[var(--cinza-claro)]">{t("contatos")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
@@ -128,9 +129,9 @@ export function MenuNavegacao() {
   const [open, setOpen] = React.useState(false)
 
   return (
-    <header className="w-full p-4 flex justify-between items-center bg-background">
+    <header className="w-full px-16 py-5 flex justify-between items-center bg-background">
       <div className="text-xl font-bold flex gap-5 items-center">
-        {AUTOR}
+        <span className={`${bebasNeue.className} text-3xl`}>{AUTOR}</span>
         <AlternadorIdioma />
       </div>
 
