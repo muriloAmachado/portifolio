@@ -87,12 +87,12 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
         </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs" className="text-[var(--cinza-claro)]">{t("experiencias")}</Link>
+            <Link href="#experiencias" className="text-[var(--cinza-claro)]">{t("experiencias")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs" className="text-[var(--cinza-claro)]">{t("projetos")}</Link>
+            <Link href="#projetos" className="text-[var(--cinza-claro)]">{t("projetos")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>

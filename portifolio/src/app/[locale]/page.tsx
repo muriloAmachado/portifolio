@@ -1,7 +1,7 @@
-import { NavigationMenu } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 import Inicio from "../_components/Inicio";
 import {MenuNavegacao} from "../_components/MenuNavegacao";
+import Experiencias from "../_components/Experiencias";
+import Projetos from "../_components/Projetos";
 
 export default function Home() {
   return (
@@ -9,11 +9,10 @@ export default function Home() {
       {/* Menu fixo no topo */}
       <MenuNavegacao />
 
-      {/* Conteúdo principal */}
-      <Inicio />
-
-      <main className="flex flex-col gap-8 items-center sm:items-start px-4 sm:px-8 md:px-16 flex-1">
-        {/* Conteúdo futuro */}
+      <main className="flex flex-col gap-8 items-center sm:items-start px-10 sm:px-8 md:px-24 flex-1">
+        <Inicio />
+        <Experiencias />
+        <Projetos />
       </main>
 
       {/* Rodapé */}
