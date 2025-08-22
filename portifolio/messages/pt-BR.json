@@ -1,0 +1,12 @@
+{
+  "SobreMim": {
+    "apresentacao": "Olá, eu sou Ítalo Vitorino",
+    "descricao": "Estudante de Engenharia de Software na PUC Minas e formado como Técnico em Desenvolvimento de Sistemas pelo SENAI CTTI. Atualmento, atuo como Desenvolvedor full-stack na 90 Tecnologia da Informação, empresa especializada em softwares para a engenharia civil."
+  },
+
+  "Secoes": {
+    "experiencias": "Experiências",
+    "projetos": "Projetos",
+    "contatos": "Contatos"
+  }
+}

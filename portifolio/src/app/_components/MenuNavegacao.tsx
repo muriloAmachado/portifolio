@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu } from "lucide-react"
+import { useTranslations } from 'next-intl';
 
 import {
   NavigationMenu,
@@ -14,9 +15,11 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { AUTOR } from "@/lib/contants"
+import { AUTOR } from "@/lib/constants"
 import { DialogTitle } from "@/components/ui/dialog"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+import AlternadorIdioma from "./AlternadorIdioma"
+import { bebasNeue } from "../[locale]/fonts";
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 
 const sessoes: { id: string; label: string; }[] = [
@@ -30,6 +33,8 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
   
   const activeId = useScrollSpy();
 
+  const t = useTranslations('Secoes');
+  
   return (
     <NavigationMenu
       viewport={false}

@@ -1,18 +1,20 @@
-import { AUTOR, SOBRE_MIM } from '@/lib/contants';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { bebasNeue } from '../[locale]/fonts';
 
 export default function Inicio() {
+    const t = useTranslations('SobreMim');
     return (
         <div  className="mt-20">
             <div id='sobre-mim' className="flex flex-col md:flex-row w-full bg-accent items-center justify-between px-6 md:px-24 py-10 gap-8">
             {/* Imagem primeiro no mobile */}
             <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2">
                 <Image 
-                    src="/window.svg"
-                    alt="Window"
-                    width={0}
-                    height={0}
-                    className="h-auto max-h-[300px] md:h-full w-auto object-contain"
+                    src="/Eu.jpg"
+                    alt="Minha foto de perfil"
+                    width={600}
+                    height={700}
+                    className="rounded-3xl"
                 />
             </div>
 

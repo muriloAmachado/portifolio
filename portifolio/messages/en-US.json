@@ -1,0 +1,12 @@
+{
+  "SobreMim": {
+    "apresentacao": "Hello, I am Italo Vitorino",
+    "descricao": "Software Engineering student at PUC Minas and trained as a Systems Development Technician by SENAI CTTI. Currently working as a full-stack developer at 90 Tecnologia da Informação, a company specializing in civil engineering software."
+  },
+
+  "Secoes": {
+    "experiencias": "Experiences",
+    "projetos": "Projects",
+    "contatos": "Contacts"
+  }
+}
