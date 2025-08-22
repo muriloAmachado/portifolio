@@ -1,15 +1,10 @@
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-<<<<<<< HEAD:portifolio/src/app/page.tsx
 import Inicio from "./_components/Inicio";
 import {MenuNavegacao} from "./_components/MenuNavegacao";
 import Projetos from "./_components/Projetos";
 import Experiencias from "./_components/Experiencias";
 import Contato from "./_components/Contato";
-=======
-import Inicio from "../_components/Inicio";
-import {MenuNavegacao} from "../_components/MenuNavegacao";
->>>>>>> 5396e426cda331e1e9e3dd1d7c148eaec49ce7a2:portifolio/src/app/[locale]/page.tsx
 
 export default function Home() {
   return (
