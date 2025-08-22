@@ -1,14 +1,120 @@
-import { AUTOR, SOBRE_MIM } from '@/lib/contants';
-import Image from 'next/image';
+'use client'
+
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useForm } from 'react-hook-form';
+import { FaGithub, FaInstagram, FaLinkedin, FaLinkedinIn } from 'react-icons/fa';
+import { BotaoRedeSocial } from './BotaoRedeSocial';
+import { GITHUB_URL, LINKEDIN_URL } from '@/lib/constants';
+import { Button } from '@/components/ui/button';
+import { bebasNeue } from '../[locale]/fonts';
+import { useTranslations } from 'next-intl';
 
 export default function Contato() {
+    const form = useForm();
+
+    const t = useTranslations("Contato");
+    
     return (
-        <div id='experiencias' className="flex flex-col md:flex-row w-full bg-accent items-center justify-between px-6 md:px-24 py-10 gap-8">
-            <div className="text-wrap w-full md:w-1/2 text-center md:text-left  ">
-                <h1 className="text-4xl md:text-6xl mb-6">CONTATO</h1>
+        <div id='contato' className="flex flex-col md:flex-row w-full justify-between px-10 md:px-8 py-10 gap-8">
+            <div className="text-wrap w-full h-full md:w-1/2 align-top md:text-left flex flex-col gap-y-8">
+                <h1 className={`${bebasNeue.className} text-6xl`}>{t("titulo")}</h1>
+                <p>muriloandrademachado@gmail.com</p>
+                <div className='flex gap-x-2'>
+                    <BotaoRedeSocial link={LINKEDIN_URL} rotulo="Linkedin">
+                        <FaLinkedinIn size={20}/>
+                    </BotaoRedeSocial>
+
+                    <BotaoRedeSocial link={GITHUB_URL} rotulo="GitHub">
+                        <FaGithub size={20}/>
+                    </BotaoRedeSocial>
+
+                    <BotaoRedeSocial link={GITHUB_URL} rotulo="GitHub">
+                        <FaInstagram size={20}/>
+                    </BotaoRedeSocial>
+                </div>
             </div>
-            <div className="w-full md:w-1/2 flex justify-center items-center ">
-                <p className="break-words max-w-full">{SOBRE_MIM}</p>
+            <div className="w-full md:w-1/2 flex justify-center items-center">
+                <Form {...form}>
+                    <form className="space-y-5 flex flex-col w-full">
+                    <FormField
+                        control={form.control}
+                        name="numero"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel>Nome</FormLabel>
+                            <FormControl>
+                                <Input
+                                    value={String(field.value || '')}
+                                    onChange={(val) => field.onChange(val)}
+                                    placeholder="Insira"
+                                />
+                            </FormControl>
+                            <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="numero"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel>E-mail</FormLabel>
+                            <FormControl>
+                                <Input
+                                    value={String(field.value || '')}
+                                    onChange={(val) => field.onChange(val)}
+                                    placeholder="Insira"
+                                />
+                            </FormControl>
+                            <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="numero"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel>Assunto</FormLabel>
+                            <FormControl>
+                                <Input
+                                    value={String(field.value || '')}
+                                    onChange={(val) => field.onChange(val)}
+                                    placeholder="Insira"
+                                />
+                            </FormControl>
+                            <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="numero"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel>Mennsagem</FormLabel>
+                            <FormControl>
+                                <Textarea
+                                    value={String(field.value || '')}
+                                    onChange={(val) => field.onChange(val)}
+                                    placeholder="Insira"
+                                    className='rounded-2xl'
+                                />
+                            </FormControl>
+                            <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <Button
+                        className='bg-secondary w-min rounded-4xl px-8 py-6'
+                        size={"lg"}
+                    >
+                        ENVIAR
+                    </Button>
+                    </form>
+                </Form>
             </div>
 
             {/* Texto depois no mobile */}

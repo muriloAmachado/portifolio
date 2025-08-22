@@ -24,7 +24,7 @@ export function CardProjeto({ titulo, descricao, ano, tecnologias, urlCodigoFont
     >
       <div>
         <Image 
-          src="/Eu.jpg"
+          src="/file.svg"
           alt="Minha foto de perfil"
           width={300}
           height={200}

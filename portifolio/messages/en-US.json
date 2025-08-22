@@ -31,5 +31,9 @@
   "Projetos": {
     "projetos": "Projects",
     "descricao": "A selection of software and solutions I have developed."
+  },
+
+  "Contato" : {
+    "titulo": "Vamos nos conectar"
   }
 }

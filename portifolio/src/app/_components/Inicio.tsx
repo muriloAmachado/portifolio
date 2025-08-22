@@ -15,7 +15,7 @@ export default function Inicio() {
             {/* Imagem primeiro no mobile */}
             <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2">
                 <Image 
-                    src="/Eu.jpg"
+                    src="/file.svg"
                     alt="Minha foto de perfil"
                     width={562}
                     height={562}

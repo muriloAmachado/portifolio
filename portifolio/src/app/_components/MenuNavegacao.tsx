@@ -42,37 +42,20 @@ export function MenuNavegacaoDesktop({ vertical = false }: { vertical?: boolean 
       className={`w-full ${vertical ? "items-start justify-start" : "justify-end"}`}
     >
       <NavigationMenuList className={`${vertical ? "flex-col gap-4 items-start justify-start" : ""}`}>
-        {/* <NavigationMenuItem>
-          <NavigationMenuTrigger className="items-start">Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+        {sessoes.map(({id, label}) => (
+          <NavigationMenuItem key={id}>
+            <NavigationMenuLink asChild>
+                <Link
+                  href={`#${id}`}
+                  className={`${navigationMenuTriggerStyle()} ${
+                    activeId === id ? "text-primary font-bold" : ""
+                  }`}
                 >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem> */}
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#experiencias" className="text-[var(--cinza-claro)]">{t("experiencias")}</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#projetos" className="text-[var(--cinza-claro)]">{t("projetos")}</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs" className="text-[var(--cinza-claro)]">{t("contatos")}</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+                  {label}
+                </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   )
@@ -102,8 +85,11 @@ export function MenuNavegacao() {
   const [open, setOpen] = React.useState(false)
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 p-4 flex justify-between items-center bg-background shadow-md mb-20">
-      <div className="text-xl font-bold">{AUTOR}</div>
+    <header className="w-full px-16 py-5 flex justify-between items-center bg-background">
+      <div className="text-xl font-bold flex gap-5 items-center">
+        <span className={`${bebasNeue.className} text-3xl`}>{AUTOR}</span>
+        <AlternadorIdioma />
+      </div>
 
       {/* Menu Desktop */}
       <div className="hidden md:flex">

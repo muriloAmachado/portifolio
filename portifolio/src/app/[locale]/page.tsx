@@ -2,6 +2,7 @@ import Inicio from "../_components/Inicio";
 import {MenuNavegacao} from "../_components/MenuNavegacao";
 import Experiencias from "../_components/Experiencias";
 import Projetos from "../_components/Projetos";
+import Contato from "../_components/Contato";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Inicio />
         <Experiencias />
         <Projetos />
+        <Contato/>
       </main>
 
       {/* Rodapé */}

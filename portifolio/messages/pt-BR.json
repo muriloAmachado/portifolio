@@ -1,6 +1,6 @@
 {
   "SobreMim": {
-    "apresentacao": "Olá, eu sou Ítalo Vitorino",
+    "apresentacao": "Olá, eu sou Murilo Andrade",
     "descricao": "Estudante de Engenharia de Software na PUC Minas e formado como Técnico em Desenvolvimento de Sistemas pelo SENAI CTTI. Atualmento, atuo como Desenvolvedor full-stack na 90 Tecnologia da Informação, empresa especializada em softwares para a engenharia civil."
   },
 
@@ -32,5 +32,9 @@
     "projetos": "Projetos",
     "descricao": "Uma seleção de softwares e soluções que desenvolvi.",
     "codigoFonte": "Código fonte"
+  },
+
+  "Contato" : {
+    "titulo": "Vamos nos conectar"
   }
 }
