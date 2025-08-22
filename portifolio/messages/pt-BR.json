@@ -8,5 +8,29 @@
     "experiencias": "Experiências",
     "projetos": "Projetos",
     "contatos": "Contatos"
+  },
+
+  "Experiencias": {
+    "experiencias": "Experiências",
+
+    "90": {
+      "cargo": "Desenvolvedor full-stack",
+      "periodo": "Abr 2025 - Presente",
+      "empresa": "90 Tecnologia da Informação",
+      "descricao": "Teste"
+    },
+
+    "Tpa": {
+      "cargo": "Suporte Técnico",
+      "periodo": "Mai 2023 - Abr 2025",
+      "empresa": "TPA Sistemas LTDA",
+      "descricao": "Teste"
+    }
+  },
+
+  "Projetos": {
+    "projetos": "Projetos",
+    "descricao": "Uma seleção de softwares e soluções que desenvolvi.",
+    "codigoFonte": "Código fonte"
   }
 }

@@ -1,25 +1,31 @@
-import { AUTOR, SOBRE_MIM } from '@/lib/contants';
-import Image from 'next/image';
+import { useTranslations } from "next-intl";
+import { bebasNeue } from "../[locale]/fonts";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { CardProjeto } from "./CardProjeto";
 
 export default function Projetos() {
-    return (
-         <div 
-            id="projetos" 
-            className="flex flex-col w-full bg-accent justify-between px-6 md:px-24 py-10 gap-8"
-        >
-            <h1 className="text-4xl md:text-6xl text-left mb-4">PROJETOS</h1>
+  const t = useTranslations("Projetos");
 
-            <div className="flex flex-col flex-wrap items-center justify-center gap-8 w-full">
-                <div className="w-72 h-40 bg-background rounded-2xl shadow-md flex items-center justify-center">
-                    Projeto 1
-                </div>
-                <div className="w-72 h-40 bg-background rounded-2xl shadow-md flex items-center justify-center">
-                    Projeto 2
-                </div>
-                <div className="w-72 h-40 bg-background rounded-2xl shadow-md flex items-center justify-center">
-                    Projeto 3
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div id="projetos" className="px-10 md:px-8 py-10 gap-10 w-full">
+      <h1 className={`${bebasNeue.className} text-6xl`}>{t("projetos")}</h1>
+      <p className="mb-6 text-[var(--cinza-claro)]">{t("descricao")}</p>
+
+      <Carousel>
+        <CarouselContent>
+          <CarouselItem className="basis-1/2">
+            <CardProjeto titulo="teste" descricao="teste" ano={2016} tecnologias={["next.js", "html", "cobol"]} urlCodigoFonte="http://www.google.com" />
+          </CarouselItem>
+          <CarouselItem className="basis-1/2">
+            <CardProjeto titulo="teste" descricao="teste" ano={2016} tecnologias={["css", "html", "cobol"]} urlCodigoFonte="http://www.google.com" />
+          </CarouselItem>
+          <CarouselItem className="basis-1/2">
+            <CardProjeto titulo="teste" descricao="teste" ano={2016} tecnologias={["css", "html", "cobol"]} urlCodigoFonte="http://www.google.com" />
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
+  );
 }

@@ -1,18 +1,43 @@
-import { AUTOR, SOBRE_MIM } from '@/lib/contants';
-import Image from 'next/image';
+import { useTranslations } from "next-intl";
+import { bebasNeue } from "../[locale]/fonts";
+import { CardExperiencia } from "./CardExperiencia";
+import { Cargo } from "@/lib/constants";
 
 export default function Experiencias() {
-    return (
-        <div id='experiencias' className="flex flex-col md:flex-row w-full bg-accent items-center justify-between px-6 md:px-24 py-10 gap-8">
-            <div className="text-wrap w-full md:w-1/2 text-center md:text-left  ">
-                <h1 className="text-4xl md:text-6xl mb-6">EXPERIÊNCIAS</h1>
-            </div>
-            <div className="w-full md:w-1/2 flex justify-center items-center ">
-                <p className="break-words max-w-full">{SOBRE_MIM}</p>
-            </div>
+  const t = useTranslations("Experiencias");
 
-            {/* Texto depois no mobile */}
-            
-        </div>
-    );
+  const experiencias: Cargo[] = [
+  {
+    "cargo": "Desenvolvedor full-stack",
+    "periodo": "Abr 2025 - Presente",
+    "empresa": "90 Tecnologia da Informação",
+    "descricao": "Teste"
+  },
+  {
+    "cargo": "Suporte Técnico",
+    "periodo": "Mai 2023 - Abr 2025",
+    "empresa": "TPA Sistemas LTDA",
+    "descricao": "Teste"
+  }
+];
+
+  return (
+    <div id="experiencias" className="flex justify-between w-full items-start px-10 md:px-8 py-10 gap-10">
+      <h1 className={`${bebasNeue.className} text-6xl`}>{t("experiencias")}</h1>
+
+      <div className="flex flex-col gap-12">
+        {
+          experiencias.map((e, index)=> (
+             <CardExperiencia 
+              key={index} 
+              cargo={e.cargo} 
+              periodo={e.periodo} 
+              empresa={e.empresa} 
+              descricao={e.descricao}
+            />
+          ))
+        }
+      </div>
+    </div>
+  );
 }
