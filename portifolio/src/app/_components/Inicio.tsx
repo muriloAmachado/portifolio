@@ -27,7 +27,7 @@ export default function Inicio() {
             <div className="flex flex-col gap-10 text-wrap w-full md:w-1/2 text-center md:text-left order-2 md:order-1">
                 <div>
                     <h1 className={`text-9xl md:text-6xl mb-6 ${bebasNeue.className}`}>{t("apresentacao")}</h1>
-                    <p className="break-words max-w-full text-[var(--cinza-claro)]">{t("descricao")}</p>
+                    <p className="break-words max-w-full text-[var(--cinza-claro)] whitespace-pre-line text-justify">{t("descricao")}</p>
                 </div>
                 
                 <div className="flex gap-3 items-center">

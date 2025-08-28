@@ -10,11 +10,38 @@ import { GITHUB_URL, LINKEDIN_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { bebasNeue } from '../[locale]/fonts';
 import { useTranslations } from 'next-intl';
+import emailjs from '@emailjs/browser';
 
 export default function Contato() {
     const form = useForm();
 
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    
     const t = useTranslations("Contato");
+
+    const handleSubmit = (data: any) => {
+        emailjs.send(
+            serviceID ?? "",
+            templateID ?? "",
+            {
+                nome: data.nome,
+                email: data.email,
+                assunto: data.assunto,
+                mensagem: data.mensagem
+            },
+            userID ?? ""
+        )
+        .then(() => {
+            alert('Mensagem enviada com sucesso!');
+            form.reset();
+        })
+        .catch((err) => {
+            console.error(err);
+            alert('Erro ao enviar mensagem.');
+        });
+    };
     
     return (
         <div id='contato' className="flex flex-col md:flex-row w-full justify-between px-10 md:px-8 py-10 gap-8">
@@ -37,10 +64,10 @@ export default function Contato() {
             </div>
             <div className="w-full md:w-1/2 flex justify-center items-center">
                 <Form {...form}>
-                    <form className="space-y-5 flex flex-col w-full">
+                    <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5 flex flex-col w-full">
                     <FormField
                         control={form.control}
-                        name="numero"
+                        name="nome"
                         render={({ field }) => (
                             <FormItem>
                             <FormLabel>Nome</FormLabel>
@@ -57,7 +84,7 @@ export default function Contato() {
                     />
                     <FormField
                         control={form.control}
-                        name="numero"
+                        name="email"
                         render={({ field }) => (
                             <FormItem>
                             <FormLabel>E-mail</FormLabel>
@@ -74,7 +101,7 @@ export default function Contato() {
                     />
                     <FormField
                         control={form.control}
-                        name="numero"
+                        name="assunto"
                         render={({ field }) => (
                             <FormItem>
                             <FormLabel>Assunto</FormLabel>
@@ -91,7 +118,7 @@ export default function Contato() {
                     />
                     <FormField
                         control={form.control}
-                        name="numero"
+                        name="mensagem"
                         render={({ field }) => (
                             <FormItem>
                             <FormLabel>Mennsagem</FormLabel>
