@@ -8,6 +8,8 @@ O site está organizado em quatro seções:
  3. 📂 **Projetos -** Uma seleção de softwares e soluções que desenvolvi.
  4. 📫 **Contatos -** Meus canais diretos para comunicação.
 
+[Link para o potifólio](https://muriloamachado.vercel.app/pt-BR) 🚀
+
 ---
 
 # Tecnologias Utilizadas
@@ -23,3 +25,7 @@ O projeto foi construído com as seguintes tecnologias:
 # Protótipos
 
 Para visualizar o protótipo do projeto [clique aqui](./images/Protótipo.png) 🚀
+
+# Apresentação
+
+[clique aqui](./images/ezgif.com-animated-gif-maker.gif) 🚀
