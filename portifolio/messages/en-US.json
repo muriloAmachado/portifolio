@@ -1,7 +1,7 @@
 {
   "SobreMim": {
-    "apresentacao": "Hello, I am Italo Vitorino",
-    "descricao": "Software Engineering student at PUC Minas and trained as a Systems Development Technician by SENAI CTTI. Currently working as a full-stack developer at 90 Tecnologia da Informação, a company specializing in civil engineering software."
+    "apresentacao": "Hello, I am Murilo Andrade",
+    "descricao": "I am a Software Engineering student at PUC Minas, passionate about technology and driven by the constant challenge of learning and evolving in the development field.\n\nCurrently, I work as a Full-Stack Developer at 90 Tecnologia da Informação, a company specialized in solutions for civil engineering, where I put into practice my knowledge in developing systems that combine performance, usability, and innovation.\n\nI have a strong interest in back-end development, for the opportunity to optimize processes, design solid architectures, and always seek the best performance in data processing. At the same time, I have experience in front-end development, which allows me to understand the entire software development lifecycle and deliver complete solutions.\n\nIn addition to technical skills, I highlight my proactivity, autonomy, and ability to learn quickly — traits that drive me to face new challenges and continuously grow, both academically and professionally."
   },
 
   "Secoes": {
@@ -12,28 +12,35 @@
 
   "Experiencias": {
     "experiencias": "Experiences",
-
-    "90": {
-      "cargo": "Desenvolvedor full-stack",
-      "periodo": "Abr 2025 - Presente",
-      "empresa": "90 Tecnologia da Informação",
-      "descricao": "Teste"
-    },
-
-    "Tpa": {
-      "cargo": "Suporte Técnico",
-      "periodo": "Mai 2023 - Abr 2025",
-      "empresa": "TPA Sistemas LTDA",
-      "descricao": "Teste"
-    }
+    "data": [
+      {
+        "cargo": "Full-Stack Developer",
+        "periodo": "Jan. 2025 - Present",
+        "empresa": "90 Tecnologia da Informação",
+        "descricao": "Full-Stack Developer, working on system development and defining architectural solutions for projects."
+      },
+      {
+        "cargo": "Technical Support",
+        "periodo": "Apr 2024 - Dec 2024",
+        "empresa": "90 Tecnologia da Informação",
+        "descricao": "Providing support to system users, creating error tickets for the development team, and generating customized reports."
+      },
+      {
+        "cargo": "Technical Support",
+        "periodo": "Dec 2023 - Apr 2024",
+        "empresa": "RECIVIL",
+        "descricao": "Providing support to system users and creating error tickets for the development team."
+      }
+    ]
   },
 
   "Projetos": {
     "projetos": "Projects",
-    "descricao": "A selection of software and solutions I have developed."
+    "descricao": "A selection of software and solutions I have developed.",
+    "codigoFonte": "Source code"
   },
 
-  "Contato" : {
-    "titulo": "Vamos nos conectar"
+  "Contato": {
+    "titulo": "Let's connect"
   }
 }

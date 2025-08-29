@@ -56,10 +56,6 @@ export default function Contato() {
                     <BotaoRedeSocial link={GITHUB_URL} rotulo="GitHub">
                         <FaGithub size={20}/>
                     </BotaoRedeSocial>
-
-                    <BotaoRedeSocial link={GITHUB_URL} rotulo="GitHub">
-                        <FaInstagram size={20}/>
-                    </BotaoRedeSocial>
                 </div>
             </div>
             <div className="w-full md:w-1/2 flex justify-center items-center">

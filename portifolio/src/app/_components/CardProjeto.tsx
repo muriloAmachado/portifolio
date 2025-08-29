@@ -22,15 +22,6 @@ export function CardProjeto({ titulo, descricao, ano, tecnologias, urlCodigoFont
                  p-6 shadow-sm transition-all duration-300 
                  bg-white/5"
     >
-      <div>
-        <Image 
-          src="/file.svg"
-          alt="Minha foto de perfil"
-          width={300}
-          height={200}
-          className="rounded-2xl object-cover"
-        />
-      </div>
 
       {/* Conteúdo */}
       <div className="flex flex-col justify-between w-full">
