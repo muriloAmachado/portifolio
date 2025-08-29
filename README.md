@@ -28,4 +28,4 @@ Para visualizar o protótipo do projeto [clique aqui](./images/Protótipo.png) �
 
 # Apresentação
 
-[clique aqui](./images/ezgif.com-animated-gif-maker.gif) 🚀
+![clique aqui](./images/ezgif.com-animated-gif-maker.gif)
